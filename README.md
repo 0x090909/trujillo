@@ -13,7 +13,7 @@ Because when the static content is made available on the network, the filename i
 ```bash
 python map_generator.py /path/to/static/content
 ```
-this command generates an output similar to this:
+This command generates a file `map_file.txt` similar to this :
 
 ```bash
 uno.jpg QmR4JyPyhaMYfD6HsNg89ptB2mYm87xhY5wtZiruWQA8Jb
@@ -24,5 +24,7 @@ undici.png QmNgpGQQee7a88M7vUGWaJ5iSGC4zg7FBwdeyUN3V7QVsK
 quattro.jpg QmYzvpftG55xbE4SsZG3mEvSJFm5y5NkLHtKPsiyP9aG8U
 cinque.jpg QmZHPsXzjPbGa2XVgoDAgHeQYs247GCpKk4VFDDZqJhWvS
 ```
+
+This has to be saved in a text file, because apache needs to know the mapping.
 
 
