@@ -15,12 +15,11 @@ def list_files(mypath):
 	onlyfiles = [mypath+f for f in listdir(mypath) if isfile(join(mypath, f))]
 	return onlyfiles
 
-
 if __name__=="__main__":
 	mypath = sys.argv[1] #this is the location of the static files you want to publish on CDN
 	files = list_files(mypath)
 	mapping = dict()
+	mapfile = open("map_file.txt","w")
 	for file in files:
-		mapping[file] = get_hash(file)
-
-	print(mapping)
+		mapfile.write(file.replace(mypath,"") + " " + get_hash(file)+"\n") #map just the filename
+	print("[+] Map file ready!")
