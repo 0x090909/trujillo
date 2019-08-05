@@ -25,6 +25,7 @@ quattro.jpg QmYzvpftG55xbE4SsZG3mEvSJFm5y5NkLHtKPsiyP9aG8U
 cinque.jpg QmZHPsXzjPbGa2XVgoDAgHeQYs247GCpKk4VFDDZqJhWvS
 ```
 
-This has to be saved in a text file, because apache needs to know the mapping.
+`map_file.txt` will be then used in the VirtualHost file to configure the reverse proxy.
+
 
 
