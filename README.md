@@ -2,6 +2,11 @@
 
 Trujillo is an experimental software that combines IPFS and Apache to serve static content on the web as a Content Delivery Network.
 
+## Requeirements
+  * Python 3
+  * Apache 2
+  * Ipfs
+
 The current theoretical configuration is as follows: 
 
 ## WEB <-----> Apache 2 <-----> IPFS
