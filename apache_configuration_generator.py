@@ -69,5 +69,22 @@ def get_info():
 
     return {"hostname":hostname, "mapping_path": mapping_path, "gateways": ipfs_gateways}
 
+def generate_configuraion(dict_config):
+    config = "<VirtualHost " + dict_config['hostname'] + ":80>\n"
+    config += "ServerAdmin webmaster@localhost\n"
+    config += "DocumentRoot /var/www/html\n"
+    config += "ErrorLog ${APACHE_LOG_DIR}/error.log\n"
+    config += "CustomLog ${APACHE_LOG_DIR}/access.log combined\n"
+    #enable reverse proxy
+    config += "ProxyPreserveHost On\n"
+    config += "RewriteEngine on\n"
+    config += "RewriteMap ipfsmap '"+dict_config['mapping_path']+"'\n"
+    #delegate rewritten url to mod_proxy
+    config += 'RewriteRule "^/(.*)" "${ipfsmap:$1}" [P]\n'
+    config += "ProxyPass / " + dict_config['gateways'][0] + '\n'
+    config += "ProxyPassReverse / " + dict_config['gateways'][0] + '\n'
+    config += "</VirtualHost>"
+    return config
+
 if __name__ == "__main__":
-    print(get_info())
+    print(generate_configuraion(get_info()))
