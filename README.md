@@ -7,10 +7,10 @@ Trujillo is an experimental software that combines IPFS and Apache to serve stat
   * Apache 2
   * Ipfs
 
-The current theoretical configuration is as follows: 
+The current theoretical configuration is as follows:
 
 ## WEB <-----> Apache 2 <-----> IPFS
-Apache 2 works as a reverse proxy between the web user and IPFS, thats because ipfs stores files on the network and indexes with a hash. 
+Apache 2 works as a reverse proxy between the web user and IPFS, thats because ipfs stores files on the network and indexes with a hash.
 
 Because when the static content is made available on the network, the filename is lost, apache is needed to map the hashes to its respective filenames so that the end user can still use its original filename to reach the file.
 
@@ -32,5 +32,13 @@ cinque.jpg QmZHPsXzjPbGa2XVgoDAgHeQYs247GCpKk4VFDDZqJhWvS
 
 `map_file.txt` will be then used in the VirtualHost file to configure the reverse proxy.
 
+### Generate apache configuration
+```bash
+python apache_configuration_generator.py
+```
 
-
+```bash
+[+] Virtual hostname (mypersonalcdn.com):
+[+] File database mapping (./map_file.txt):
+[+] IPFS Gateway (Blank to stop): 
+```
