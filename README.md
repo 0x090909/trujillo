@@ -37,8 +37,9 @@ cinque.jpg QmZHPsXzjPbGa2XVgoDAgHeQYs247GCpKk4VFDDZqJhWvS
 python apache_configuration_generator.py
 ```
 
+#### Interactive configurator
 ```bash
 [+] Virtual hostname (mypersonalcdn.com):
 [+] File database mapping (./map_file.txt):
-[+] IPFS Gateway (Blank to stop): 
+[+] IPFS Gateway (Blank to stop):
 ```
